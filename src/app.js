@@ -1,3 +1,6 @@
+import myMenu from './assets/menu';
+import myContact from './assets/contact';
+
 const content = document.getElementById('content');
 
 const nav = document.createElement('div');
@@ -29,7 +32,7 @@ ul.appendChild(li2);
 
 content.appendChild(nav);
 h1.appendChild(document.createTextNode('The Restaurant'));
-h1.onclick = function () {
+h1.onclick = () => {
   window.location.reload(true);
 };
 
@@ -37,19 +40,6 @@ h1.onclick = function () {
 nav.appendChild(h1);
 nav.appendChild(ul);
 
-function createDiv() {
-  const content = document.getElementById('content');
-  const div = document.createElement('div');
-  div.id = 'img_div';
-  div.classList.add('test');
-  div.style.backgroundImage = "url('https://images.anovaculinary.com/sous-vide-salmon-2/directions/sous-vide-salmon-2-directions-image-1.jpg')";
-  div.style.height = '130vh';
-  div.style.width = '100%';
-  div.style.backgroundSize = '100%';
-  div.style.color = 'white';
-  content.appendChild(div);
-  div.innerHTML += '<div id="modal01" class="modal" onclick="this.style.display=\'none\'"> <img id="img01" class="mx-auto d-block w-50"> <p id="caption" class="text-center text-dark font-weight-bold bg-light"></p> </div>';
-}
 const div = document.createElement('div');
 div.id = 'img_div';
 div.classList.add('test');
@@ -74,94 +64,10 @@ div.appendChild(textDiv);
 
 div.innerHTML += '<div id="modal01" class="modal" onclick="this.style.display=\'none\'"> <img id="img01" class="mx-auto d-block w-50"> <p id="caption" class="text-center text-dark font-weight-bold bg-light"></p> </div>';
 
-function onClick(element) {
-  document.getElementById('img01').src = element.src;
-  document.getElementById('modal01').style.display = 'block';
-  const captionText = document.getElementById('caption');
-  captionText.innerHTML = 'PRICE: $10';
-}
-
-li1.onclick = function () {
-  document.getElementById('img_div').outerHTML = '';
-  createDiv();
-  const menu = document.createElement('div');
-  const imgDiv = document.getElementById('img_div');
-  menu.classList.add(...['d-flex', 'flex-wrap', 'justify-content-center', 'w-50', 'mx-auto', 'pt-5']);
-  imgDiv.appendChild(menu);
-  const card1 = document.createElement('img');
-  card1.id = card1;
-  card1.classList.add('m-5');
-  card1.src = 'https://www.chimuadventures.com/blog/wp-content/uploads/2016/06/Ceviche_Peru_shutterstock1.jpg';
-  card1.style.height = '300px';
-  card1.style.width = '300px';
-  card1.style.objectFit = 'cover';
-  card1.appendChild(document.createTextNode('The best food in the world'));
-  menu.appendChild(card1);
-  card1.onclick = function () { onClick(this); };
-  const card2 = document.createElement('img');
-  card2.classList.add('m-5');
-  card2.src = 'https://www.chimuadventures.com/blog/wp-content/uploads/2016/06/Ceviche_Peru_shutterstock1.jpg';
-  card2.style.height = '300px';
-  card2.style.width = '300px';
-  card2.style.objectFit = 'cover';
-  menu.appendChild(card2);
-  card2.onclick = function () { onClick(this); };
-  const card3 = document.createElement('img');
-  card3.classList.add('m-5');
-  card3.src = 'https://www.chimuadventures.com/blog/wp-content/uploads/2016/06/Ceviche_Peru_shutterstock1.jpg';
-  card3.style.height = '300px';
-  card3.style.width = '300px';
-  card3.style.objectFit = 'cover';
-  menu.appendChild(card3);
-  card3.onclick = function () { onClick(this); };
-  const card4 = document.createElement('img');
-  card4.classList.add('m-5');
-  card4.src = 'https://www.chimuadventures.com/blog/wp-content/uploads/2016/06/Ceviche_Peru_shutterstock1.jpg';
-  card4.style.height = '300px';
-  card4.style.width = '300px';
-  card4.style.objectFit = 'cover';
-  menu.appendChild(card4);
-  card4.onclick = function () { onClick(this); };
-  const card5 = document.createElement('img');
-  card5.classList.add('m-5');
-  card5.src = 'https://www.chimuadventures.com/blog/wp-content/uploads/2016/06/Ceviche_Peru_shutterstock1.jpg';
-  card5.style.height = '300px';
-  card5.style.width = '300px';
-  card5.style.objectFit = 'cover';
-  menu.appendChild(card5);
-  card5.onclick = function () { onClick(this); };
-  const card6 = document.createElement('img');
-  card6.classList.add('m-5');
-  card6.src = 'https://www.chimuadventures.com/blog/wp-content/uploads/2016/06/Ceviche_Peru_shutterstock1.jpg';
-  card6.style.height = '300px';
-  card6.style.width = '300px';
-  card6.style.objectFit = 'cover';
-  menu.appendChild(card6);
-  card6.onclick = function () { onClick(this); };
+li1.onclick = () => {
+  myContact();
 };
 
-li2.onclick = function () {
-  document.getElementById('img_div').outerHTML = '';
-  createDiv();
-  const menu2 = document.createElement('div');
-  const imgDiv = document.getElementById('img_div');
-  menu2.classList.add(...['d-flex', 'flex-wrap', 'justify-content-center', 'w-50', 'mx-auto', 'flex-column', 'p-5']);
-  imgDiv.appendChild(menu2);
-  imgDiv.appendChild(menu2);
-  const h1 = document.createElement('H1');
-  h1.classList.add(...['text-center', 'text-secondary']);
-  const h2 = document.createElement('H2');
-  h2.classList.add(...['text-center', 'text-secondary']);
-  h1.appendChild(document.createTextNode('Contact Us For Better Information'));
-  h2.appendChild(document.createTextNode('+569-12345678'));
-  const card6 = document.createElement('img');
-  card6.classList.add('m-5');
-  card6.src = 'https://media.istockphoto.com/photos/happy-group-of-people-working-at-a-call-center-picture-id878674818?k=6&m=878674818&s=612x612&w=0&h=RBwiU_Lk7aArVuBPb0-NMrgxRv10jxTQOk_fF7o-3sQ=';
-  card6.style.height = '500px';
-  card6.style.width = '750px';
-  card6.style.objectFit = 'cover';
-  menu2.appendChild(card6);
-
-  menu2.appendChild(h1);
-  menu2.appendChild(h2);
+li2.onclick = () => {
+  myMenu();
 };
