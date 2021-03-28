@@ -2,10 +2,6 @@
 
 This is a project that contains a small restaurant app, that was created with Javascript, HTML, Bootstrap and, DOM. In this app you can view the menu and the contact page
 
-## 🔴 Live Demo:
-
-[My Library](https://raw.githack.com/Nexch/Library/development/index.html)
-
 ## 🔧 Built with
 
 - HTML
@@ -40,7 +36,7 @@ To get a local copy up and running follow these simple steps:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Nexch/Library/issues).
+Feel free to check the [issues page](https://github.com/Nexch/Restaurant/issues).
 
 
 ## ⭐ Show your support
